@@ -5,7 +5,7 @@ using System;
 
 [Serializable]
 public class GameData {
-    public int[ , ] gameData = new int[5,21];
+    public int[ , ] gameData = new int[5,22];
 
     public GameData() {
         for(int i = 0 ; i < 5 ; i++) {

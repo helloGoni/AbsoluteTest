@@ -5,20 +5,12 @@ using UnityEngine.UI;
 using TMPro;
 public class ListManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public GameObject[] stage;
     public TMP_Text totalStarText;
+
+    void Start() {
+        Setting();
+    }
 
     public void Setting() {
         int type = SaveManager.instance.gameType;

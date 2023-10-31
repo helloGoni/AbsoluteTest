@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNumText: {fileID: 6505286615039227648}
   starImage: {fileID: 4043416150226543338}
+  lockImage: {fileID: 21300000, guid: e27b93a3a73d6844e993213ed84030c6, type: 3}
   zeroStar: {fileID: 21300000, guid: 52fd815aa5e89a04bbe2b36fbf8a4765, type: 3}
   oneStar: {fileID: 21300000, guid: 552a966f32a585e4f99489cc6243a24d, type: 3}
   twoStar: {fileID: 21300000, guid: 48c801b996074254e995f006d5ded98f, type: 3}

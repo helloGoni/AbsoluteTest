@@ -18,6 +18,11 @@ public class SaveManager : MonoBehaviour
 
     }
 
+    void Start() {
+        gameType = 0;
+        stage = 1;
+    }
+
     public GameData data = new GameData();
     public string fileName = "AbsoulteData.json";
 //안드로이드는 어디서하는지?
@@ -66,7 +71,15 @@ public class SaveManager : MonoBehaviour
 
     #region 스테이지 데이터 저장
 
+    public void GameOver(int value) {
+        if(data.gameData[gameType,stage] < value) {
+            data.gameData[gameType,stage] = value;
+            if(data.gameData[gameType,stage+1] == -1)
+                data.gameData[gameType,stage+1] = 0;
+            SaveData();
+        }
 
+    }
 
     #endregion
     //https://yoonstone-games.tistory.com/43

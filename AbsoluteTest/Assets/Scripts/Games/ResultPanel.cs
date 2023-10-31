@@ -5,18 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class StageSelecter : MonoBehaviour
+public class ResultPanel : MonoBehaviour
 {
-    public TMP_Text stageNumText;
+    public GameObject resultPanel;
+    public TMP_Text resultStageText;
     public Image starImage;
-    public Sprite lockImage, zeroStar, oneStar, twoStar, threeStar;
+    public Sprite zeroStar,oneStar,twoStar,threeStar;
 
-    public void Setup(int stageNum, int count) {
-        stageNumText.text = stageNum.ToString();
-        switch(count) {
-            case -1:
-                starImage.sprite = lockImage;
-                break;
+    public void CallResultPanel(int count) {
+        int stage = SaveManager.instance.stage;
+        resultStageText.text = $"Stage {stage.ToString()}";
+        SetStarImage(count);
+        SaveManager.instance.GameOver(count);
+        resultPanel.SetActive(true);
+    }
+
+    public void SetStarImage(int count) {
+        switch (count) {
             case 0:
                 starImage.sprite = zeroStar;
                 break;
@@ -33,7 +38,9 @@ public class StageSelecter : MonoBehaviour
                 break;
         }
     }
-    public void StartGame() {
-        SceneManager.LoadScene("GameScene");
+
+    public void BackBtn() {
+        SceneManager.LoadScene("MainScene");
     }
+
 }
